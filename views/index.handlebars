@@ -1,0 +1,144 @@
+<div class="container">
+  <h1> Eat Da Burger! </h1>
+
+  {{!-- Carousel --}}
+  <div id="carouselIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+    {{!-- Bottom Indicators --}}
+    <div class="carousel-indicators carousel-icons">
+      <span data-target="#carouselIndicators" data-slide-to="0" class="active">
+        <i class="fas fa-hamburger fa-2x"></i>
+      </span>
+      <span data-target="#carouselIndicators" data-slide-to="1">
+        <i class="fas fa-hamburger fa-2x"></i>
+      </span>
+      <span data-target="#carouselIndicators" data-slide-to="2">
+        <i class="fas fa-hamburger fa-2x"></i>
+      </span>
+    </div>
+
+    {{!-- Divs for gifs --}}
+    <div class="menuGif"></div>
+    <div class="plateGif"></div>
+
+    {{!-- Carousel Cards --}}
+    <div class="carousel-inner">
+      {{!-- Menu --}}
+      <div class="carousel-item menuContain active" id="menu">
+          <img src="/assets/img/chalkboard.jpg" alt="chalkboard"/>
+
+          {{!-- List Burgers --}}
+          <div class="menuText">
+            <ul id="menuList">
+              {{#each burgers}}
+                <li class="burgerText" data-id="{{id}}" data-served="{{numServed}}" data-devoured="{{numDevoured}}">
+                  {{burgerName}}
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+
+          
+          {{!-- Form To Add burger --}}
+          <div class="text-center" id="burgerForm">
+            <form class="newBurger">
+              <div class="form-group">
+                <label for="burgerName"> Burger Name: </label>
+                <input type="text" id="bur" name="name" placeholder="If Looks Could Kale">
+              </div>
+
+              <button type="submit"> Request Burger </button>
+            </form>
+          </div>
+
+        {{!-- Close Menu --}}
+      </div>
+
+      {{!-- Plate --}}
+      <div class="carousel-item plateContain" id="plate">
+        <img src="/assets/img/plate.png" alt="plate"/>
+
+        <div class="burgers">
+          <ul id="plateList">
+            {{#each burgers}}
+              {{#if numServed}}
+                {{#repeat numServed}}
+                  <li class="burgerPlate" data-id="{{id}}" data-served="{{numServed}}" data-devoured="{{numDevoured}}">
+                    <button class="burgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
+                  </li>
+                {{/repeat}}
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+
+      {{!-- Close Plate --}}
+      </div>
+
+      {{!-- Stomach --}}
+      <div class="carousel-item stomachContain" id="stomach">
+        <img src="/assets/img/stomach.jpg" alt="stomach"/>
+
+        <div class="eatenBurgers">
+          <ul id="stomachList">
+            {{#each burgers}}
+              {{#if numDevoured}}
+                {{#repeat numDevoured}}
+                  <li data-id="{{id}}" data-served="{{numServed}}" data-devoured="{{numDevoured}}">
+                    <button class="eatenBurgerBtn" data-toggle="tooltip" title="{{this.burgerName}}"></button>
+                  </li>
+                {{/repeat}}
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+
+      {{!-- Close Stomach --}}
+      </div>
+      
+    {{!-- Close Carousel Cards --}}
+    </div>
+
+    {{!-- Carousel Buttons --}}
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <i class="fa-2x fas fa-hand-holding-usd" id="leftIcon"></i>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <i class="fa-2x fas fa-utensils" id="rightIcon"></i>
+      <span class="sr-only">Next</span>
+    </a>
+  {{!-- Close Carousel --}}
+  </div>
+
+  {{!-- Modal --}}
+  <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"> Modal title </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <span id="modalText">Testing</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  {{!-- Close Modal --}}
+  </div>
+{{!-- Close Container --}}
+</div>
+
+
+
+{{!-- Footer --}}
+<footer class="footer card-footer">
+  <div class="container text-center">
+    <p><a href="/api/burgers"> API Burger List </a> | <a href="https://github.com/LMBoyle/burger"> GitHub Repo </a> 
+  </div>
+{{!-- Close Footer --}}
+</footer>
