@@ -28,8 +28,8 @@ app.engine("handlebars", hbs.engine);
 
 // Routes ===================================================================
 
-require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+require("./routes/apiRoutes.js")(app);
+require("./routes/htmlRoutes.js")(app);
 
 // Listen ===================================================================
 
