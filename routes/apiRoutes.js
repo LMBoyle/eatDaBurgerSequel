@@ -9,6 +9,7 @@ module.exports = function(db) {
 
   router.get("/burgers", appController.getBurgers);
   router.post("/burgers", appController.createBurger);
+  router.put("/burgers/:id", appController.updateBurger)
 
   return router;
 }
