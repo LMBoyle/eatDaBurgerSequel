@@ -6,12 +6,11 @@ var router = require("express").Router();
 
 module.exports = function(db) {
   router.get("/", function(req, res) {
-      res.render("index")
+    db.Burgers.findAll({}).then(function (dbBurgers) {
+      res.render("index", {
+        burgers: dbBurgers
+      })
+    })
   });
-
-  router.get("*", function(req, res) {
-    res.render("index");
-  });
-
   return router;
 }

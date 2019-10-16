@@ -2,7 +2,7 @@ module.exports = {
   development: {
     username: process.env.LOCAL_USER,
     password: process.env.LOCAL_PASS,
-    database: 'burgers_db',
+    database: 'burgerSequel_db',
     details: {
       host: process.env.LOCAL_HOST,
       port: 3306,

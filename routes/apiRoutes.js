@@ -7,8 +7,8 @@ var router = require("express").Router()
 module.exports = function(db) {
   var appController = require("../controllers/burgersController.js")(db);
 
-  router.get("/api/burgers", appController.getBurgers);
-  // router.post("/api/burgers", appController.createBurger);
+  router.get("/burgers", appController.getBurgers);
+  router.post("/burgers", appController.createBurger);
 
   return router;
 }

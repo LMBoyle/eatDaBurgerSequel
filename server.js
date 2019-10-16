@@ -35,6 +35,8 @@ app.use(require('./routes/htmlRoutes')(db));
 // Listen ===================================================================
 // console.log(db.sequelize)
 db.sequelize.sync({ force: true }).then(function() {
+  require('./db/seed.js')(db);
+  
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
