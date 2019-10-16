@@ -33,11 +33,32 @@ app.use('/api', require('./routes/apiRoutes')(db));
 app.use(require('./routes/htmlRoutes')(db));
 
 // Listen ===================================================================
-// console.log(db.sequelize)
-db.sequelize.sync({ force: true }).then(function() {
-  require('./db/seed.js')(db);
-  
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+
+// catch 404 and forward to error handler
+if (app.get('env') !== 'development') {
+  app.use((req, res, next) => {
+    const err = new Error('Not Found: ' + req.url);
+    err.status = 404;
+    next(err);
+  });
+}
+
+const syncOptions = {
+  force: process.env.FORCE_SYNC === 'true'
+};
+
+if (app.get('env') === 'test') {
+  syncOptions.force = true;
+}
+
+db.sequelize.sync(syncOptions).then(() => {
+  if (app.get('env') !== 'test' || syncOptions.force) {
+    require('./db/seed.js')(db);
+  }
+
+  app.listen(PORT, () => {
+    console.log(`App listening on port: ${PORT}`);
   });
 });
+
+module.exports = app;
