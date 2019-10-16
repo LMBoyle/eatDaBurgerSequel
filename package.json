@@ -1,5 +1,5 @@
 {
-  "name": "burger",
+  "name": "burgersequel",
   "version": "1.0.0",
   "description": "Order a delicious burger and scarf it down!",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LMBoyle/burger.git"
+    "url": "git+https://github.com/LMBoyle/burgerSequel.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LMBoyle/burger/issues"
+    "url": "https://github.com/LMBoyle/burgerSequel/issues"
   },
-  "homepage": "https://github.com/LMBoyle/burger#readme",
+  "homepage": "https://github.com/LMBoyle/burgerSequel#readme",
   "dependencies": {
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
