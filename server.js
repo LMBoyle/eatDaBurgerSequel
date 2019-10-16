@@ -1,5 +1,6 @@
 // Dependencies =============================================================
 
+require('dotenv').config();
 var express = require("express");
 var exphbs = require("express-handlebars");
 const handlebars = require('handlebars');
@@ -28,11 +29,11 @@ app.engine("handlebars", hbs.engine);
 
 // Routes ===================================================================
 
-require("./routes/apiRoutes.js")(app);
-require("./routes/htmlRoutes.js")(app);
+app.use('/api', require('./routes/apiRoutes')(db));
+app.use(require('./routes/htmlRoutes')(db));
 
 // Listen ===================================================================
-
+// console.log(db.sequelize)
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
