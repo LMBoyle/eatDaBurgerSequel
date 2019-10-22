@@ -1,4 +1,4 @@
-# burgerSequel
+# Eat Da Burger Sequel
 Order a(nother) delicious burger and scarf it down!
 
 ## Instructions
@@ -19,9 +19,11 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 * Handlebars
 * Handlebar Repeat Helper
 
-## Demo
+## What It Teaches
+How to use Sequelize in place of a custom ORM
 
-![Demo Gif](public/assets/img/eatDaBurger.gif)
+## Demo
+![Demo Gif](public/assets/img/eatDaBurgerDemo.gif)
 
 ## Future Development/Improvements
 - [ ] Mobile Responsive
@@ -30,7 +32,6 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 - [ ] Better burger placement in divs
 - [ ] Possible animation for burgers going into stomach
 - [ ] Add in a Customer association 
-
 
 ## Links
 [Deployed Link](https://eatdaburgersequel-lmb.herokuapp.com/)
