@@ -1,10 +1,12 @@
-# Eat Da Burger Sequel
-Order a(nother) delicious burger and scarf it down!
+# [Eat Da Burger Sequel](https://eatdaburgersequel-lmb.herokuapp.com/)
+
+Full-Stack application for 'ordering' and 'eating' burgers. Remade the original [Eat Da Burger App](https://github.com/LMBoyle/eatDaBurger) using Sequelize
 
 ## Instructions
+
 Choose a burger or request your own. Then, head over to your plate to eat the burgers you've ordered. You can even get a peek inside and see which burgers you've already had.
 
-## Languages/Technologies 
+## Built With...
 * HTML
 * Bootstrap
 * JavaScript
@@ -19,10 +21,8 @@ Choose a burger or request your own. Then, head over to your plate to eat the bu
 * Handlebars
 * Handlebar Repeat Helper
 
-## What It Teaches
-How to use Sequelize in place of a custom ORM
-
 ## Demo
+
 ![Demo Gif](public/assets/img/eatDaBurgerDemo.gif)
 
 ## Future Development/Improvements
@@ -33,7 +33,4 @@ How to use Sequelize in place of a custom ORM
 - [ ] Possible animation for burgers going into stomach
 - [ ] Add in a Customer association 
 
-## Links
-[Deployed Link](https://eatdaburgersequel-lmb.herokuapp.com/)
-
-[Portfolio](https://lmboyle.github.io/)
+&copy; 2019 [Luke Boyle](https://lmboyle.github.io/)
